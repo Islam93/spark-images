@@ -8,7 +8,7 @@ RUN apt update \
     && dpkg -i scala-2.12.1.deb \
     && apt update \
     && apt install scala \
-    && apt update && apt clean
+    && apt clean
 
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
