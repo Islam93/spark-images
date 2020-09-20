@@ -6,9 +6,12 @@ RUN apt update \
     && apt remove scala-library scala \
     && wget http://scala-lang.org/files/archive/scala-2.12.1.deb \
     && dpkg -i scala-2.12.1.deb \
+    && wget -O sbt-1.3.13.deb https://bintray.com/sbt/debian/download_file?file_path=sbt-1.3.13.deb \
+    && dpkg -i sbt-1.3.13.deb \
     && apt update \
-    && apt install scala \
-    && apt clean
+    && apt install scala sbt \
+    && apt clean \
+    && rm scala-2.12.1.deb sbt-1.3.13.deb
 
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
