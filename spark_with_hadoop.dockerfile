@@ -29,6 +29,7 @@ RUN ln -sf ${SPARK_DIR} ${SPARK_HOME}
 ENV PATH ${PATH}:${SPARK_HOME}/bin:${SPARK_HOME}/sbin
 
 ADD ./conf/spark-defaults.conf ${SPARK_HOME}/conf/spark-defaults.conf
+ADD ./conf/metrics.properties ${SPARK_HOME}/conf/metrics.properties
 ADD ./entrypoint.sh /entrypoint
 
 EXPOSE 4040 4040

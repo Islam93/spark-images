@@ -40,6 +40,7 @@ ENV PATH ${PATH}:${SPARK_HOME}/bin:${SPARK_HOME}/sbin:${HADOOP_HOME}/bin:${HADOO
 ENV SPARK_DIST_CLASSPATH '/usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/*:/usr/local/hadoop/share/hadoop/common/*:/usr/local/hadoop/share/hadoop/hdfs:/usr/local/hadoop/share/hadoop/hdfs/lib/*:/usr/local/hadoop/share/hadoop/hdfs/*:/usr/local/hadoop/share/hadoop/mapreduce/lib/*:/usr/local/hadoop/share/hadoop/mapreduce/*:/usr/local/hadoop/share/hadoop/yarn:/usr/local/hadoop/share/hadoop/yarn/lib/*:/usr/local/hadoop/share/hadoop/yarn/*'
 
 ADD ./conf/spark-defaults.conf ${SPARK_HOME}/conf/spark-defaults.conf
+ADD ./conf/metrics.properties ${SPARK_HOME}/conf/metrics.properties
 ADD ./entrypoint.sh /entrypoint
 
 EXPOSE 4040 4040
