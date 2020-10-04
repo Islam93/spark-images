@@ -1,0 +1,10 @@
+services:
+  docker
+
+install:
+  - docker build -f spark_and_hadoop.dockerfile --tag spark-and-hadoop .
+  - docker build -f spark_with_hadoop.dockerfile --tag spark-with-hadoop .
+
+script:
+  - docker exec spark-and-hadoop spark-shell --version
+  - docker exec spark-with-hadoop spark-shell --version
