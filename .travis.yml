@@ -1,3 +1,7 @@
+language: scala
+scala:
+  - 2.12.12
+
 services:
   docker
 
@@ -6,5 +10,5 @@ install:
   - docker build -f spark_with_hadoop.dockerfile --tag spark-with-hadoop .
 
 script:
-  - docker exec spark-and-hadoop spark-shell --version
-  - docker exec spark-with-hadoop spark-shell --version
+  - docker run --rm spark-and-hadoop spark-shell --version
+  - docker run --rm spark-with-hadoop spark-shell --version
